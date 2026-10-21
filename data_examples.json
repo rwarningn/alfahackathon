@@ -1,0 +1,5 @@
+[
+  {"company":"ООО Вектор (синтетика)","amount":1000000,"term_months":12,"monthly_revenue":1200000,"monthly_expenses":800000,"existing_payment":20000,"business_months":24},
+  {"company":"ООО Старт (синтетика)","amount":1000000,"term_months":12,"monthly_revenue":1200000,"monthly_expenses":800000,"existing_payment":20000,"business_months":9},
+  {"company":"ООО Риск (синтетика)","amount":1000000,"term_months":12,"monthly_revenue":1200000,"monthly_expenses":1150000,"existing_payment":20000,"business_months":24}
+]
