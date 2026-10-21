@@ -1,0 +1,46 @@
+# VS Code REST Client format. Cookies from login are reused by the client.
+@base = http://localhost:8000
+# Replace after creating an application.
+@applicationId = REPLACE_WITH_CREATED_ID
+
+### Health
+GET {{base}}/api/health
+
+### Client login
+POST {{base}}/api/login
+Content-Type: application/json
+
+{"username":"client","password":"client-demo"}
+
+### Submit synthetic application
+POST {{base}}/api/applications
+Content-Type: application/json
+
+{"company":"ООО Вектор (синтетика)","amount":1000000,"term_months":12,"monthly_revenue":1200000,"monthly_expenses":800000,"existing_payment":20000,"business_months":24}
+
+### List (scope depends on role)
+GET {{base}}/api/applications
+
+### Analyst login (replaces session cookie)
+POST {{base}}/api/login
+Content-Type: application/json
+
+{"username":"bank","password":"bank-demo"}
+
+### Take into review
+POST {{base}}/api/applications/{{applicationId}}/transition
+Content-Type: application/json
+
+{"status":"review","comment":"Проверяем финансовые показатели"}
+
+### Approve after review
+POST {{base}}/api/applications/{{applicationId}}/transition
+Content-Type: application/json
+
+{"status":"approved","comment":"Показатели проверены; демо-одобрение"}
+
+### Logout
+POST {{base}}/api/logout
+Content-Type: application/json
+
+{}

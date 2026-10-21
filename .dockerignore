@@ -1,0 +1,6 @@
+brandbook
+*.pdf
+data
+tmp
+.git
+__pycache__

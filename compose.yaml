@@ -1,0 +1,18 @@
+services:
+  cabinet:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      DB_PATH: /app/data/credit.db
+      PORT: "8000"
+    volumes:
+      - credit-data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 15s
+      timeout: 3s
+      retries: 3
+volumes:
+  credit-data:

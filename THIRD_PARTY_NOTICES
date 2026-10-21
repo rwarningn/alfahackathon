@@ -1,0 +1,26 @@
+Runtime components
+------------------
+Python 3.12.7 and its standard library (including sqlite3 / bundled SQLite):
+Python Software Foundation License; SQLite is public domain.
+Container base: Docker Official Image python:3.12.7-slim, based on Debian.
+The image includes OS packages under their respective licenses; inspect the
+image's /usr/share/doc/*/copyright when producing the final distribution.
+Docker / Docker Compose are launch tools, not embedded application code.
+
+Design reference
+----------------
+The supplied brandbook/core-components--alfalab-core-components-50.37.0 is
+a local reference, not an installed or redistributed runtime dependency.
+Its packages/vars/src/colors-brand.css specifies brand red #ef3124 used as
+a design reference. UI markup, styles and scripts in web/ are newly authored;
+React core-components, logos, fonts and images have not been copied.
+Confirm branding rights and applicable notices before public distribution.
+
+Models, datasets, integrations
+-----------------------------
+No trained ML model, LLM, external dataset, paid API or corporate system is used.
+All supplied company names and financial examples are synthetic.
+Credit policy, rate and recommendation are fictional demo rules, not bank policy.
+KYC, bureau, tax authority, document upload, signature and funds transfer are
+not integrated or implemented. No real bank operation occurs.
+The feed uses local status-dependent text; it does not fetch external news.
